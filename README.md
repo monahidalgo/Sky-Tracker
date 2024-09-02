@@ -1,7 +1,10 @@
-# WeatherPal 🌤️
-# WeatherPal - Your Personalized Weather App
+# Sky Tracker🌤️
+# Weather Tracking App - Your Personalized Weather App
 
 Welcome to **WeatherPal**, the ultimate weather app designed to provide the best user experience with accurate, real-time weather information. Developed by **Mona Hidalgo**, this app combines beautiful visuals, dynamic data presentation, and user-friendly features to make checking the weather a delightful part of your day.
+
+# UI Image From an Android Studio Emulator
+<img src="https://github.com/user-attachments/assets/cd171834-9f04-48f7-99b8-51d240fb07e9" alt="skytracker1" width="200" />
 
 ## Features
 
