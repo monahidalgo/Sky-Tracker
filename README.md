@@ -1,9 +1,9 @@
 # Sky Tracker🌤️
 # Weather Tracking App - Your Personalized Weather App
 
-Welcome to **WeatherPal**, the ultimate weather app designed to provide the best user experience with accurate, real-time weather information. Developed by **Mona Hidalgo**, this app combines beautiful visuals, dynamic data presentation, and user-friendly features to make checking the weather a delightful part of your day.
+Welcome to **WeatherPal**, the ultimate weather app that provides the best user experience with accurate, real-time weather information. Developed by **Mona Hidalgo**, this app combines beautiful visuals, dynamic data presentation, and user-friendly features to make checking the weather a delightful part of your day. This app is newly designed and I will be busy working on the code these coming months. 
 
-# UI Image From an Android Studio Emulator
+# A UI Image From an Android Studio IDE Emulator
 <img src="https://github.com/user-attachments/assets/cd171834-9f04-48f7-99b8-51d240fb07e9" alt="skytracker1" width="200" />
 
 ## Features
@@ -15,7 +15,7 @@ Welcome to **WeatherPal**, the ultimate weather app designed to provide the best
     - Seamless integration of background visuals using `WeatherBg` to reflect real-time weather updates.
 
 2. **Real-Time Weather Data:**
-    - Fetches current weather data, including temperature, humidity, wind speed, and condition descriptions, directly from a weather API.
+    - Fetches weather data directly from a weather API, including temperature, humidity, wind speed, and condition descriptions.
     - Live data updates ensure users always have the most accurate weather information.
 
 3. **Modern and Intuitive UI:**
@@ -37,7 +37,7 @@ Welcome to **WeatherPal**, the ultimate weather app designed to provide the best
     - Option to search and add multiple locations for quick weather checks on the go.
 
 2. **Hourly and Weekly Forecasts:**
-    - Expand data view to include hourly weather updates for the current day.
+    - Expand the data view to include hourly weather updates for the current day.
     - Display a 7-day forecast with temperature highs and lows, precipitation chances, and more.
 
 3. **Weather Alerts and Notifications:**
@@ -64,16 +64,16 @@ Welcome to **WeatherPal**, the ultimate weather app designed to provide the best
 
 ## Contact and Collaboration
 
-This app is proudly developed by **Mona Hidalgo**. For any inquiries, suggestions, or collaboration opportunities, please reach out:
+This app is developed by **Mona Hidalgo**. For any inquiries, suggestions, or collaboration opportunities, please reach out:
 
 - **Email:** monaego@live.com
 
-We are excited to continue developing **WeatherPal** into the best weather app available. Your feedback and support are invaluable as we build a more intuitive and engaging weather experience.
+I'm excited to continue developing **Sky Tracker** into the best weather app available. Your feedback and support are invaluable as I build a more intuitive and engaging weather experience.
 
 ## License
 
-This project is licensed under the MIT License.  //Feel free to explore, modify, and use it to fit your needs.
+This project is licensed under the MIT License.  //
 
 ---
 
-I hope you will enjoy using **WeatherPal** as much as I enjoy building it! Stay tuned for more updates, features, and release date.
+I hope you will enjoy using **Sky Tracker** as much as I enjoy building it! Stay tuned for more updates, features, and the release date.
