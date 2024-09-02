@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:weatherpal/screens/weather_view.dart'; // Correct the path if needed
-import 'package:weatherpal/screens/home_screen.dart'; // Adjust this path based on your file structure
+// Adjust this path based on your file structure
 
 
 class HomeScreen extends StatelessWidget {
@@ -23,7 +23,7 @@ class HomeScreen extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('WeatherPal'),
+        title: const Text('SkyTracker'),
       ),
       body: WeatherView(weatherData: weatherData),
     );
