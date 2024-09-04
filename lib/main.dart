@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:weatherpal/services/weather_service.dart';
-import 'package:weatherpal/utils/theme_provider.dart';
-import 'package:weatherpal/screens/home_screen.dart'; // Ensure the path is correct
-import 'package:weatherpal/screens/search_screen.dart'; // Import the SearchScreen
-import 'package:weatherpal/screens/weather_details_screen.dart'; // Import WeatherDetailsScreen
-import 'package:weatherpal/utils/route_transition.dart'; // Import the FadePageRoute
+import 'package:skytracker/screens/home_screen.dart';
+import 'package:skytracker/screens/search_screen.dart';
+import 'package:skytracker/screens/weather_details_screen.dart';
+import 'package:skytracker/services/weather_service.dart';
+import 'package:skytracker/utils/route_transition.dart';
+import 'package:skytracker/utils/theme_provider.dart';
+
 
 void main() {
   runApp(

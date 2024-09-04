@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:weatherpal/screens/search_screen.dart';
-import 'package:weatherpal/widget/weather_widget.dart';
-import 'package:weatherpal/screens/settings_screen.dart';
-import 'package:weatherpal/screens/sign_in_screen.dart';
-import 'package:weatherpal/screens/weather_details_screen.dart';
+import 'package:skytracker/screens/search_screen.dart';
+import 'package:skytracker/screens/settings_screen.dart';
+import 'package:skytracker/screens/sign_in_screen.dart';
+import 'package:skytracker/screens/weather_details_screen.dart';
+
+
+import '../widget/weather_widget.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -20,7 +22,7 @@ class HomeScreen extends StatelessWidget {
           // Background image
           Positioned.fill(
             child: Image.asset(
-              'assets/images/cloudy_snowy_background.jpg', // Ensure you have this image in your assets
+              'assets/images/weather.jpg', // Ensure you have this image in your assets
               fit: BoxFit.cover,
             ),
           ),
@@ -29,7 +31,7 @@ class HomeScreen extends StatelessWidget {
             child: SnowEffect(), // Snow effect widget
           ),
           // Weather content
-          Center(
+          const Center(
             child: WeatherWidget(
               weatherData: {
                 'name': 'Your Location',
