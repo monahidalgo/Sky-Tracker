@@ -44,4 +44,6 @@ class WeatherService with ChangeNotifier {
     }
     return {};
   }
+
+  fetchWeather(String text) {}
 }
