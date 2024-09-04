@@ -1,17 +1,23 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart'; // Add this import
 import 'package:skytracker/screens/search_screen.dart';
 import 'package:skytracker/screens/settings_screen.dart';
 import 'package:skytracker/screens/sign_in_screen.dart';
 import 'package:skytracker/screens/weather_details_screen.dart';
-
-
 import '../widget/weather_widget.dart';
+import '../services/weather_service.dart'; // Import the weather service
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    // Access WeatherService
+    final weatherService = Provider.of<WeatherService>(context);
+
+    // Fetch weather data when the screen is built
+    weatherService.fetchWeatherData();
+
     return Scaffold(
       appBar: AppBar(
         title: const Text('SkyTracker'),
@@ -22,22 +28,51 @@ class HomeScreen extends StatelessWidget {
           // Background image
           Positioned.fill(
             child: Image.asset(
-              'assets/images/weather.jpg', // Ensure you have this image in your assets
+              'assets/images/weather.jpg',
               fit: BoxFit.cover,
             ),
           ),
           // Snow effect
           Positioned.fill(
-            child: SnowEffect(), // Snow effect widget
+            child: SnowEffect(),
           ),
           // Weather content
-          const Center(
-            child: WeatherWidget(
-              weatherData: {
-                'name': 'Albuquerque, New Mexico',
-                'main': {'temp': 22, 'humidity': 80},
-                'weather': [{'description': 'Snowy'}],
-                'wind': {'speed': 5},
+          Center(
+            child: Consumer<WeatherService>(
+              builder: (context, weatherService, child) {
+                if (weatherService.isLoading) {
+                  return const CircularProgressIndicator();
+                } else {
+                  return WeatherWidget(weatherData: weatherService.weatherData);
+                }
+              },
+            ),
+          ),
+          // Live temperature icon
+          Positioned(
+            bottom: 20,
+            left: MediaQuery.of(context).size.width * 0.25,
+            child: Consumer<WeatherService>(
+              builder: (context, weatherService, child) {
+                final temp = weatherService.weatherData['main']?['temp'] ?? 0;
+                return Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Icon(
+                      Icons.ac_unit, // Replace with weather icon
+                      size: 50,
+                      color: Colors.white.withOpacity(0.8),
+                    ),
+                    const SizedBox(height: 8),
+                    Text(
+                      '${temp.toStringAsFixed(1)}°C',
+                      style: Theme.of(context).textTheme.titleMedium?.copyWith(
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ],
+                );
               },
             ),
           ),
@@ -59,6 +94,7 @@ class HomeScreen extends StatelessWidget {
   }
 }
 
+// AppDrawer class remains the same
 class AppDrawer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {

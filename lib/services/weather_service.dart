@@ -4,7 +4,7 @@ import 'package:http/http.dart' as http;
 import 'package:shared_preferences/shared_preferences.dart';
 
 class WeatherService with ChangeNotifier {
-  String apiKey = 'YOUR_API_KEY'; // Replace with your weather API key
+  String apiKey = '8ac10eaf77f6433d634f808c6de7e508'; // Replace with your weather API key
   String location = 'New York';
   Map<String, dynamic> weatherData = {};
   bool isLoading = false;

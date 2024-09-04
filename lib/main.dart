@@ -7,7 +7,6 @@ import 'package:skytracker/services/weather_service.dart';
 import 'package:skytracker/utils/route_transition.dart';
 import 'package:skytracker/utils/theme_provider.dart';
 
-
 void main() {
   runApp(
     MultiProvider(
@@ -33,7 +32,7 @@ class MyApp extends StatelessWidget {
           theme: themeProvider.lightTheme,
           darkTheme: themeProvider.darkTheme,
           themeMode: themeProvider.themeMode,
-          home: HomeScreen(), // HomeScreen as the main screen
+          home: const HomeScreen(), // Ensure HomeScreen is the main screen
           onGenerateRoute: (settings) {
             switch (settings.name) {
               case '/search':
@@ -49,7 +48,3 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-
-
-
-
