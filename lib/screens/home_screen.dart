@@ -34,7 +34,7 @@ class HomeScreen extends StatelessWidget {
           const Center(
             child: WeatherWidget(
               weatherData: {
-                'name': 'Your Location',
+                'name': 'Albuquerque, New Mexico',
                 'main': {'temp': 22, 'humidity': 80},
                 'weather': [{'description': 'Snowy'}],
                 'wind': {'speed': 5},
