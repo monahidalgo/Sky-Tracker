@@ -11,7 +11,7 @@ void main() {
   runApp(
     MultiProvider(
       providers: [
-        ChangeNotifierProvider(create: (_) => WeatherService()),
+        ChangeNotifierProvider(create: (_) => WeatherService()..fetchWeatherData()), // Fetch weather data on startup
         ChangeNotifierProvider(create: (_) => ThemeProvider()),
       ],
       child: const MyApp(),
@@ -32,7 +32,7 @@ class MyApp extends StatelessWidget {
           theme: themeProvider.lightTheme,
           darkTheme: themeProvider.darkTheme,
           themeMode: themeProvider.themeMode,
-          home: const HomeScreen(), // Ensure HomeScreen is the main screen
+          home: const HomeScreen(), // HomeScreen as the main screen
           onGenerateRoute: (settings) {
             switch (settings.name) {
               case '/search':
@@ -48,3 +48,8 @@ class MyApp extends StatelessWidget {
     );
   }
 }
+
+
+
+
+

@@ -8,11 +8,11 @@ class WeatherWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // Safely extract values with default fallbacks
-    final locationName = weatherData['name'] ?? 'Unknown Location';
-    final temp = weatherData['main']?['temp']?.toStringAsFixed(1) ?? 'N/A';
-    final description = weatherData['weather']?.first['description'] ?? 'No description';
-    final humidity = weatherData['main']?['humidity']?.toString() ?? 'N/A';
-    final windSpeed = weatherData['wind']?['speed']?.toString() ?? 'N/A';
+    final locationName = weatherData['location']?['name'] ?? 'Unknown Location';
+    final temp = weatherData['current']?['temp_c']?.toStringAsFixed(1) ?? 'N/A';
+    final description = weatherData['current']?['condition']?['text'] ?? 'No description';
+    final humidity = weatherData['current']?['humidity']?.toString() ?? 'N/A';
+    final windSpeed = weatherData['current']?['wind_kph']?.toString() ?? 'N/A';
 
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
@@ -37,7 +37,7 @@ class WeatherWidget extends StatelessWidget {
           style: Theme.of(context).textTheme.titleMedium,
         ),
         Text(
-          'Wind: $windSpeed m/s',
+          'Wind: $windSpeed kph',
           style: Theme.of(context).textTheme.titleMedium,
         ),
       ],

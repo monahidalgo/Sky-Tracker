@@ -2,7 +2,7 @@
 import 'package:flutter/material.dart';
 
 class SignInScreen extends StatelessWidget {
-  const SignInScreen({Key? key}) : super(key: key);
+  const SignInScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -15,11 +15,11 @@ class SignInScreen extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            TextField(
-              decoration: const InputDecoration(labelText: 'Email'),
+            const TextField(
+              decoration: InputDecoration(labelText: 'Email'),
             ),
-            TextField(
-              decoration: const InputDecoration(labelText: 'Password'),
+            const TextField(
+              decoration: InputDecoration(labelText: 'Password'),
               obscureText: true,
             ),
             const SizedBox(height: 20),

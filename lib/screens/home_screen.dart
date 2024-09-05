@@ -1,78 +1,49 @@
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart'; // Add this import
+import 'package:provider/provider.dart';
 import 'package:skytracker/screens/search_screen.dart';
 import 'package:skytracker/screens/settings_screen.dart';
 import 'package:skytracker/screens/sign_in_screen.dart';
 import 'package:skytracker/screens/weather_details_screen.dart';
-import '../widget/weather_widget.dart';
-import '../services/weather_service.dart'; // Import the weather service
+import 'package:skytracker/services/weather_service.dart';
+import 'package:skytracker/widgets/snow_effect.dart'; // Import the SnowEffect widget
+import '../widgets/weather_widget.dart';
 
 class HomeScreen extends StatelessWidget {
-  const HomeScreen({Key? key}) : super(key: key);
+  const HomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    // Access WeatherService
-    final weatherService = Provider.of<WeatherService>(context);
-
-    // Fetch weather data when the screen is built
-    weatherService.fetchWeatherData();
-
     return Scaffold(
       appBar: AppBar(
         title: const Text('SkyTracker'),
       ),
-      drawer: AppDrawer(),
+      drawer: const AppDrawer(),
       body: Stack(
         children: [
           // Background image
           Positioned.fill(
             child: Image.asset(
-              'assets/images/weather.jpg',
+              'assets/images/weather.jpg', // Ensure you have this image in your assets
               fit: BoxFit.cover,
             ),
           ),
           // Snow effect
-          Positioned.fill(
-            child: SnowEffect(),
+          const Positioned.fill(
+            child: SnowEffect(), // Snow effect widget
           ),
           // Weather content
           Center(
             child: Consumer<WeatherService>(
               builder: (context, weatherService, child) {
                 if (weatherService.isLoading) {
-                  return const CircularProgressIndicator();
+                  return CircularProgressIndicator();
+                } else if (weatherService.weatherData.isNotEmpty) {
+                  return WeatherWidget(
+                    weatherData: weatherService.weatherData,
+                  );
                 } else {
-                  return WeatherWidget(weatherData: weatherService.weatherData);
+                  return Text('Failed to load weather data');
                 }
-              },
-            ),
-          ),
-          // Live temperature icon
-          Positioned(
-            bottom: 20,
-            left: MediaQuery.of(context).size.width * 0.25,
-            child: Consumer<WeatherService>(
-              builder: (context, weatherService, child) {
-                final temp = weatherService.weatherData['main']?['temp'] ?? 0;
-                return Column(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    Icon(
-                      Icons.ac_unit, // Replace with weather icon
-                      size: 50,
-                      color: Colors.white.withOpacity(0.8),
-                    ),
-                    const SizedBox(height: 8),
-                    Text(
-                      '${temp.toStringAsFixed(1)}°C',
-                      style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                        color: Colors.white,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                  ],
-                );
               },
             ),
           ),
@@ -87,15 +58,16 @@ class HomeScreen extends StatelessWidget {
             ),
           );
         },
-        child: const Icon(Icons.info),
         tooltip: 'More Weather Details',
+        child: const Icon(Icons.info),
       ),
     );
   }
 }
 
-// AppDrawer class remains the same
 class AppDrawer extends StatelessWidget {
+  const AppDrawer({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Drawer(
@@ -138,38 +110,7 @@ class AppDrawer extends StatelessWidget {
               MaterialPageRoute(builder: (context) => const SignInScreen()),
             ),
           ),
-          ListTile(
-            leading: const Icon(Icons.logout),
-            title: const Text('Logout'),
-            onTap: () {
-              // Add logout logic here
-              Navigator.pop(context);
-            },
-          ),
         ],
-      ),
-    );
-  }
-}
-
-class SnowEffect extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Stack(
-      children: List.generate(
-        100,
-            (index) => Positioned(
-          top: (index % 10) * 50.0,
-          left: (index % 10) * 30.0,
-          child: Opacity(
-            opacity: 0.7,
-            child: Icon(
-              Icons.ac_unit,
-              size: 10,
-              color: Colors.white.withOpacity(0.5),
-            ),
-          ),
-        ),
       ),
     );
   }

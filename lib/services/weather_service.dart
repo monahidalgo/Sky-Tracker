@@ -4,22 +4,29 @@ import 'package:http/http.dart' as http;
 import 'package:shared_preferences/shared_preferences.dart';
 
 class WeatherService with ChangeNotifier {
-  String apiKey = '8ac10eaf77f6433d634f808c6de7e508'; // Replace with your weather API key
-  String location = 'New York';
+  String apiKey = '847b5e732ad44181ad683917240509'; // Replace with your WeatherAPI key
+  String location = '35.1475,-107.8514'; // Coordinates for Grants, NM
   Map<String, dynamic> weatherData = {};
   bool isLoading = false;
 
   Future<void> fetchWeatherData() async {
     try {
       isLoading = true;
+      notifyListeners(); // Notify listeners when loading starts
       final response = await http.get(
-        Uri.parse(
-            'https://api.openweathermap.org/data/2.5/weather?q=$location&appid=$apiKey&units=metric'),
+        Uri.parse('http://api.weatherapi.com/v1/current.json?key=$apiKey&q=$location&aqi=no'),
       );
+
+      print('API Response: ${response.body}'); // Debugging line
 
       if (response.statusCode == 200) {
         weatherData = json.decode(response.body);
         _cacheWeatherData(weatherData);
+        notifyListeners();
+      } else {
+        print('Failed to load weather data: ${response.statusCode}');
+        print('Response body: ${response.body}'); // Print response body for more details
+        weatherData = await _getCachedWeatherData();
         notifyListeners();
       }
     } catch (e) {
@@ -28,6 +35,7 @@ class WeatherService with ChangeNotifier {
       notifyListeners();
     } finally {
       isLoading = false;
+      notifyListeners(); // Notify listeners when loading ends
     }
   }
 
