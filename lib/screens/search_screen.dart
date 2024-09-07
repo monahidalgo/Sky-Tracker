@@ -1,4 +1,3 @@
-// search_screen.dart
 import 'package:flutter/material.dart';
 
 class SearchScreen extends StatelessWidget {
@@ -15,16 +14,21 @@ class SearchScreen extends StatelessWidget {
         child: Column(
           children: [
             TextField(
-              decoration: const InputDecoration(
-                hintText: 'Enter city name',
-                border: OutlineInputBorder(),
+              decoration: InputDecoration(
+                hintText: 'Enter location',
+                prefixIcon: const Icon(Icons.location_on),
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(8),
+                ),
               ),
-              onSubmitted: (value) {
-                // Trigger search logic here, e.g., call the API to get weather for the entered city
-              },
             ),
             const SizedBox(height: 20),
-            // Add widgets to display search results, e.g., weather details for the entered city
+            ElevatedButton(
+              onPressed: () {
+                // Handle search
+              },
+              child: const Text('Search'),
+            ),
           ],
         ),
       ),

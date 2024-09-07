@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-
-
 import '../utils/theme_provider.dart';
 
 class SettingsScreen extends StatelessWidget {
@@ -14,27 +12,36 @@ class SettingsScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Settings'),
+        backgroundColor: Theme.of(context).appBarTheme.backgroundColor,
+        titleTextStyle: Theme.of(context).appBarTheme.titleTextStyle,
+        iconTheme: Theme.of(context).appBarTheme.iconTheme,
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const Text(
+            Text(
               'Appearance',
-              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+              style: Theme.of(context).textTheme.titleMedium?.copyWith(
+                fontWeight: FontWeight.bold,
+                fontFamily: 'Roboto',
+              ),
             ),
             SwitchListTile(
               title: const Text('Dark Mode'),
               value: themeProvider.isDarkMode,
               onChanged: (value) {
-                themeProvider.toggleTheme(value); // Pass boolean value
+                themeProvider.toggleTheme(value);
               },
             ),
             const Divider(),
-            const Text(
+            Text(
               'Units',
-              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+              style: Theme.of(context).textTheme.titleMedium?.copyWith(
+                fontWeight: FontWeight.bold,
+                fontFamily: 'Roboto',
+              ),
             ),
             ListTile(
               title: const Text('Temperature Units'),
@@ -50,15 +57,18 @@ class SettingsScreen extends StatelessWidget {
               ),
             ),
             const Divider(),
-            const Text(
+            Text(
               'Notifications',
-              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+              style: Theme.of(context).textTheme.titleLarge?.copyWith(
+                fontWeight: FontWeight.bold,
+                fontFamily: 'Roboto',
+              ),
             ),
             SwitchListTile(
               title: const Text('Enable Weather Alerts'),
               value: themeProvider.notificationsEnabled,
               onChanged: (value) {
-                themeProvider.toggleNotifications(value); // Pass boolean value
+                themeProvider.toggleNotifications(value);
               },
             ),
           ],
