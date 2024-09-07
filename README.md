@@ -3,8 +3,12 @@
 
 Welcome to **Sky Tracker**, the ultimate weather app that provides the best user experience with accurate, real-time weather information. Developed by **Mona Hidalgo**, this app combines beautiful visuals, dynamic data presentation, and user-friendly features to make checking the weather a delightful part of your day. This app is newly designed and I will be busy working on the code these coming months. 
 
-# A UI Image From an Android Studio IDE Emulator
+# A UI Images from an Android Studio IDE Emulator
 <img src="https://github.com/user-attachments/assets/cd171834-9f04-48f7-99b8-51d240fb07e9" alt="skytracker1" width="200" />
+
+# Current image 
+<img src="https://github.com/user-attachments/assets/c416bbeb-bdfd-46b9-9dd3-30b0be793b89" alt="skytracker1" width="300" />
+
 
 ## Features
 
