@@ -12,12 +12,12 @@ class GetStartedScreen extends StatelessWidget {
             description: 'Track weather updates in real-time with Sky Tracker.',
           ),
           _buildPage(
-            image: 'assets/fake_image2.png',
+            image: 'assets/images/temp.jpeg',
             title: 'Stay Informed',
             description: 'Get daily weather forecasts and monthly trends.',
           ),
           _buildPage(
-            image: 'assets/fake_image3.png',
+            image: 'assets/images/weatherforecast.jpeg',
             title: 'Be Prepared',
             description: 'Receive alerts for severe weather conditions.',
           ),
