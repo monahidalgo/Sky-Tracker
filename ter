@@ -1,0 +1,121 @@
+[33mcommit 903952bbadf0aeb6096cddf4e03d1dd0d5ba743f[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: Your Name <monaego@live.com>
+Date:   Thu Sep 5 03:45:49 2024 -0600
+
+    feat: Integrate WeatherAPI for accurate weather data
+    
+    - Replaced OpenWeatherMap with WeatherAPI for fetching weather data.
+    - Updated WeatherService to use latitude and longitude for precise location (Grants, NM).
+    - Enhanced error handling and debugging in WeatherService.
+    - Updated WeatherWidget to correctly display weather data from WeatherAPI.
+    - Verified and tested the integration to ensure accurate data display.
+
+[33mcommit 4ef1f953843bc933027f13d7c042692819da4359[m
+Author: Your Name <monaego@live.com>
+Date:   Wed Sep 4 04:02:24 2024 -0600
+
+    Add live weather forecast feature
+    
+    - Implemented weather fetching and caching in WeatherService
+    - Added provider for WeatherService in main app
+    - Updated HomeScreen to display live weather data with background and snow effect
+    - Added logging for debugging weather data fetching
+    - Checked and confirmed API key and permissions
+    
+    Ready for further testing and review.
+
+[33mcommit 9ff96acd8c20aca725abc05896bfe21d1a5cd1ba[m
+Author: Your Name <monaego@live.com>
+Date:   Wed Sep 4 03:28:37 2024 -0600
+
+    Add background images for test and creative design for HomeScreen; update asset configuration
+
+[33mcommit 9c272d0a4cb6674cd8fc6fd7388ffb97c415d216[m
+Author: Your Name <monaego@live.com>
+Date:   Wed Sep 4 01:56:33 2024 -0600
+
+    Add background images for test and creative design for HomeScreen; update asset configuration
+
+[33mcommit a982a9ab5042daeadb9d248ebfa9fab2ab32b459[m
+Author: Your Name <monaego@live.com>
+Date:   Wed Sep 4 01:15:52 2024 -0600
+
+    Add snowy background and snow effect to HomeScreen; updated weather widget data
+
+[33mcommit 7ba50eafab410897f9e8aef1754a254315e02749[m
+Author: Mona Hidalgo <monaego@live.com>
+Date:   Mon Sep 2 04:54:01 2024 -0600
+
+    Create cmake-single-platform.yml
+
+[33mcommit 77728b60e80659c02947f467e44a22aeaf2b1367[m
+Author: Mona Hidalgo <monaego@live.com>
+Date:   Mon Sep 2 04:51:57 2024 -0600
+
+    Update README.md
+    
+    Updated app name.
+
+[33mcommit bfde7aab388f21821bab997afcf60ef57d0aa834[m
+Author: Mona Hidalgo <monaego@live.com>
+Date:   Mon Sep 2 04:49:49 2024 -0600
+
+    Update README.md
+    
+    Updated with image.
+
+[33mcommit 97768ce68c8071c5dcf49e915fdb499d34e7d428[m
+Author: Mona Hidalgo <monaego@live.com>
+Date:   Mon Sep 2 04:43:53 2024 -0600
+
+    Update README.md
+    
+    Added new UI image from Android Studio IDE.
+
+[33mcommit 2151e5a60effd4eb830deac40a23943880857ca0[m
+Merge: 55580ce a2bad07
+Author: Your Name <monaego@live.com>
+Date:   Mon Sep 2 04:24:40 2024 -0600
+
+    Merge remote-tracking branch 'origin/master'
+
+[33mcommit 55580ce1fa8879668dda8eb770c38a0b50cf86f1[m
+Author: Your Name <monaego@live.com>
+Date:   Sun Sep 1 23:38:05 2024 -0600
+
+    initial commit:
+    
+    -rename weather app to
+    -sky tracker app
+
+[33mcommit a2bad0737fe81a857b5aded1fab2d8e828149aab[m
+Author: Your Name <monaego@live.com>
+Date:   Sun Sep 1 23:38:05 2024 -0600
+
+    feat: Implement initial Weather App structure
+    
+    - Added main.dart with MultiProvider setup for WeatherService and ThemeProvider.
+    - Created HomeScreen with integration to fetch weather data using WeatherService.
+    - Developed WeatherView to display weather data dynamically based on conditions.
+    - Implemented basic UI elements in WeatherView for temperature, humidity, wind speed, and weather visuals.
+    - Integrated weather background animations to reflect current weather conditions using WeatherBg.
+    - Established state management using Provider for real-time updates and theme switching.
+    - Added error handling and loading indicators in HomeScreen for better user experience.
+    
+    Built foundational components to ensure seamless data flow between WeatherService and WeatherView.
+
+[33mcommit 7dac7eab560083b959a0f9fb6d68eab0486f5a44[m
+Author: Your Name <monaego@live.com>
+Date:   Sun Sep 1 23:29:32 2024 -0600
+
+    git commit -m "Added WeatherService and WeatherView integration:
+    - Created WeatherService for fetching weather data from API.
+    - Implemented WeatherView to display weather data visually.
+    - Set up HomeScreen to fetch and pass data to WeatherView.
+    - Improved app structure for better data management and user experience."
+
+[33mcommit d56d38a3fa857eb8c53f1266cf17996ed80a7249[m
+Author: Your Name <monaego@live.com>
+Date:   Sun Sep 1 17:04:50 2024 -0600
+
+    Initial commit

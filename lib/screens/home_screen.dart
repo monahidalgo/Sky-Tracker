@@ -16,7 +16,7 @@ class HomeScreen extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('SkyTracker - Weather Forecast'),
+        title: const Text('Sky Tracker Weather '),
       ),
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(16.0),
@@ -81,8 +81,12 @@ class HomeScreen extends StatelessWidget {
                   style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                 ),
                 SizedBox(height: 8),
+                Text('City: Big Bear, CA'),
+                Text('Cold and Snowy'),
+                Text('Sunrise: 06:00 AM'),
+                Text('Sunset: 8:00 PM'),
                 Text('Sunny, 28°C'),
-                Text('Humidity: 40%'),
+                Text('Humidity: 10%'),
                 Text('Wind: 10 km/h SW'),
               ],
             ),
